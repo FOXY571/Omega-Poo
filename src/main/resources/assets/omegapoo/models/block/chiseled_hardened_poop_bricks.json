@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "omegapoo:block/chiseled_hardened_poop_bricks"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "omegapoo:omegapoo/root",
+  "criteria": {
+    "plunger": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:plunger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.omegapoo.obtain_plunger.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "omegapoo:plunger"
+    },
+    "title": {
+      "translate": "advancements.omegapoo.obtain_plunger.title"
+    }
+  },
+  "requirements": [
+    [
+      "plunger"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

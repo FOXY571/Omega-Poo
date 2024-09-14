@@ -1,0 +1,33 @@
+{
+  "parent": "omegapoo:omegapoo/root",
+  "criteria": {
+    "toilet_paper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:toilet_paper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.omegapoo.obtain_toilet_paper.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "omegapoo:toilet_paper"
+    },
+    "title": {
+      "translate": "advancements.omegapoo.obtain_toilet_paper.title"
+    }
+  },
+  "requirements": [
+    [
+      "toilet_paper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

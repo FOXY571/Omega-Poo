@@ -1,0 +1,35 @@
+{
+  "criteria": {
+    "toilet_paper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:toilet_paper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "omegapoo:textures/block/poop_block.png",
+    "description": {
+      "translate": "advancements.omegapoo.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "omegapoo:poop"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.omegapoo.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "toilet_paper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

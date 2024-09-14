@@ -1,0 +1,35 @@
+{
+  "parent": "omegapoo:omegapoo/obtain_toilet_paper",
+  "criteria": {
+    "golden_poop": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:golden_poop"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.omegapoo.obtain_golden_poop.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "omegapoo:golden_poop"
+    },
+    "title": {
+      "translate": "advancements.omegapoo.obtain_golden_poop.title"
+    }
+  },
+  "requirements": [
+    [
+      "golden_poop"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

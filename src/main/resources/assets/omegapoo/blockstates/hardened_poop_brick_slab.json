@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "omegapoo:block/hardened_poop_brick_slab"
+    },
+    "type=double": {
+      "model": "omegapoo:block/hardened_poop_bricks"
+    },
+    "type=top": {
+      "model": "omegapoo:block/hardened_poop_brick_slab_top"
+    }
+  }
+}

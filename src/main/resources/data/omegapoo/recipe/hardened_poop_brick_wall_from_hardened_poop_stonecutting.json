@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "omegapoo:hardened_poop"
+  },
+  "result": {
+    "count": 1,
+    "id": "omegapoo:hardened_poop_brick_wall"
+  }
+}

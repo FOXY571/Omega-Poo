@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_omega_poop": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:omega_poop"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "omegapoo:omega_toilet_paper"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_omega_poop"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "omegapoo:omega_toilet_paper"
+    ]
+  }
+}

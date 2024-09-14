@@ -1,0 +1,33 @@
+{
+  "parent": "omegapoo:omegapoo/obtain_poop",
+  "criteria": {
+    "hardened_poop_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:hardened_poop_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.omegapoo.obtain_hardened_poop_bricks.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "omegapoo:hardened_poop_bricks"
+    },
+    "title": {
+      "translate": "advancements.omegapoo.obtain_hardened_poop_bricks.title"
+    }
+  },
+  "requirements": [
+    [
+      "hardened_poop_bricks"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

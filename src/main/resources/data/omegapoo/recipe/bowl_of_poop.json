@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "omegapoo:poop"
+    },
+    {
+      "item": "omegapoo:poop"
+    },
+    {
+      "item": "omegapoo:poop"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "omegapoo:bowl_of_poop"
+  }
+}

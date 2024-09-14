@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "omegapoo:block/hardened_poop_bricks"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "omegapoo:omegapoo/obtain_poop",
+  "criteria": {
+    "poop": {
+      "conditions": {
+        "item": {
+          "items": [
+            "omegapoo:poop"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.omegapoo.eat_poop.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "omegapoo:poop"
+    },
+    "title": {
+      "translate": "advancements.omegapoo.eat_poop.title"
+    }
+  },
+  "requirements": [
+    [
+      "poop"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

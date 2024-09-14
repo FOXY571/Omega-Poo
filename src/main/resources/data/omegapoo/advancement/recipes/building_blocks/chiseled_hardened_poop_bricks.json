@@ -1,0 +1,67 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hardened_poop_brick_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:hardened_poop_brick_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "omegapoo:chiseled_hardened_poop_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hardened_poop_brick_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "omegapoo:chiseled_hardened_poop_bricks"
+    ]
+  }
+}
+
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "omegapoo:chiseled_hardened_poop_bricks"
+    ]
+  },
+  "criteria": {
+    "has_hardened_poop_brick_slab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "omegapoo:hardened_poop_brick_slab"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "omegapoo:chiseled_hardened_poop_bricks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_hardened_poop_brick_slab",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "omegapoo:omegapoo/obtain_toilet_paper",
+  "criteria": {
+    "poop": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:poop"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.omegapoo.obtain_poop.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "omegapoo:poop"
+    },
+    "title": {
+      "translate": "advancements.omegapoo.obtain_poop.title"
+    }
+  },
+  "requirements": [
+    [
+      "poop"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

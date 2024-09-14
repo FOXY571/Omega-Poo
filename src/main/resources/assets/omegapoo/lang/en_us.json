@@ -1,0 +1,41 @@
+{
+  "item.omegapoo.poop": "Poop",
+  "item.omegapoo.golden_poop": "Golden Poop",
+  "item.omegapoo.omega_poop": "Omega Poop",
+  "item.omegapoo.toilet_paper": "Toilet Paper",
+  "item.omegapoo.omega_toilet_paper": "Omega Toilet Paper",
+  "item.omegapoo.plunger": "Plunger",
+  "item.omegapoo.bowl_of_poop": "Bowl of Poop",
+
+  "tooltip.omegapoo.toilet_paper": "\u00a77Must be crouching in order to use",
+
+  "block.omegapoo.poop_block": "Poop Block",
+  "block.omegapoo.poop_carpet": "Poop Carpet",
+  "block.omegapoo.hardened_poop": "Hardened Poop",
+  "block.omegapoo.hardened_poop_stairs": "Hardened Poop Stairs",
+  "block.omegapoo.hardened_poop_slab": "Hardened Poop Slab",
+  "block.omegapoo.hardened_poop_bricks": "Hardened Poop Bricks",
+  "block.omegapoo.chiseled_hardened_poop_bricks": "Chiseled Hardened Poop Bricks",
+  "block.omegapoo.hardened_poop_brick_stairs": "Hardened Poop Brick Stairs",
+  "block.omegapoo.hardened_poop_brick_slab": "Hardened Poop Brick Slab",
+  "block.omegapoo.hardened_poop_brick_wall": "Hardened Poop Brick Wall",
+
+  "creativetab.omegapoo.omegapoo_tab": "Omega Poo",
+
+  "sound.omegapoo.poop": "Poop",
+
+  "advancements.omegapoo.root.title": "Omega Poo",
+  "advancements.omegapoo.root.description": "Advancements for Omega Poo",
+  "advancements.omegapoo.obtain_plunger.title": "It's A-Me!",
+  "advancements.omegapoo.obtain_plunger.description": "Obtain a plunger",
+  "advancements.omegapoo.obtain_toilet_paper.title": "Potty Time",
+  "advancements.omegapoo.obtain_toilet_paper.description": "Obtain toilet paper",
+  "advancements.omegapoo.obtain_poop.title": "Chocolate Maker",
+  "advancements.omegapoo.obtain_poop.description": "Obtain poop",
+  "advancements.omegapoo.obtain_golden_poop.title": "What Did You Eat?",
+  "advancements.omegapoo.obtain_golden_poop.description": "Obtain golden poop",
+  "advancements.omegapoo.eat_poop.title": "The Cycle Continues",
+  "advancements.omegapoo.eat_poop.description": "Eat poop",
+  "advancements.omegapoo.obtain_hardened_poop_bricks.title": "Stinky Infrastructure",
+  "advancements.omegapoo.obtain_hardened_poop_bricks.description": "Obtain hardened poop bricks"
+}
