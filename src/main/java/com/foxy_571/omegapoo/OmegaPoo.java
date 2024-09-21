@@ -1,6 +1,7 @@
 package com.foxy_571.omegapoo;
 
 import com.foxy_571.omegapoo.block.ModBlocks;
+import com.foxy_571.omegapoo.block.entity.ModBlockEntities;
 import com.foxy_571.omegapoo.config.Config;
 import com.foxy_571.omegapoo.config.OmegaToiletPaperBlacklist;
 import com.foxy_571.omegapoo.item.ModCreativeModeTabs;
@@ -25,6 +26,7 @@ public class OmegaPoo {
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModSounds.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC, "omegapoo/omegapoo.toml");
