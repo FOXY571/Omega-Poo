@@ -2,7 +2,7 @@
   "parent": "minecraft:block/stairs",
   "textures": {
     "bottom": "omegapoo:block/hardened_poop_bricks",
-    "top": "omegapoo:block/hardened_poop_bricks",
-    "side": "omegapoo:block/hardened_poop_bricks"
+    "side": "omegapoo:block/hardened_poop_bricks",
+    "top": "omegapoo:block/hardened_poop_bricks"
   }
 }

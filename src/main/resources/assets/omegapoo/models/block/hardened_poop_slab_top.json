@@ -2,7 +2,7 @@
   "parent": "minecraft:block/slab_top",
   "textures": {
     "bottom": "omegapoo:block/hardened_poop",
-    "top": "omegapoo:block/hardened_poop",
-    "side": "omegapoo:block/hardened_poop"
+    "side": "omegapoo:block/hardened_poop",
+    "top": "omegapoo:block/hardened_poop"
   }
 }
