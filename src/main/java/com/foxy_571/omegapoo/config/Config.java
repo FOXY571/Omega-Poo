@@ -10,9 +10,9 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public class Config {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-    private static final ModConfigSpec.IntValue TOILET_PAPER_COOLDOWN = BUILDER.comment("How long in ticks should players have to wait before using Toilet Paper again? (default: 20)").defineInRange("Toilet Paper Cooldown", 20, 20, 300);;
-    private static final ModConfigSpec.IntValue OMEGA_TOILET_PAPER_COOLDOWN = BUILDER.comment("How long in ticks should players have to wait before using Omega Toilet Paper again? (default: 50)").defineInRange("Omega Toilet Paper Cooldown", 50, 20, 300);;
-    private static final ModConfigSpec.IntValue GOLDEN_POOP_CHANCE = BUILDER.comment("What should the percent chance to get Golden Poop be when using Toilet Paper? (default: 1)").defineInRange("Golden Poop Chance", 1, 1, 100);;
+    private static final ModConfigSpec.IntValue TOILET_PAPER_COOLDOWN = BUILDER.comment("How long in ticks should players have to wait before using Toilet Paper again? (default: 20)").defineInRange("Toilet Paper Cooldown", 20, 20, 300);
+    private static final ModConfigSpec.IntValue OMEGA_TOILET_PAPER_COOLDOWN = BUILDER.comment("How long in ticks should players have to wait before using Omega Toilet Paper again? (default: 50)").defineInRange("Omega Toilet Paper Cooldown", 50, 20, 300);
+    private static final ModConfigSpec.IntValue GOLDEN_POOP_CHANCE = BUILDER.comment("What should the percent chance to get Golden Poop be when using Toilet Paper? (default: 1)").defineInRange("Golden Poop Chance", 1, 1, 100);
 
     public static final ModConfigSpec SPEC = BUILDER.build();
 

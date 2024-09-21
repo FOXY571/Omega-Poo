@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Random;
@@ -21,26 +22,8 @@ public class ToiletPaperItem extends Item {
         super(properties);
     }
 
-//    @Override
-//    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
-//        if (!pLevel.isClientSide) {
-//            if (pPlayer.isCrouching() && (pPlayer.isCreative() || pPlayer.getFoodData().getFoodLevel() > 0)) {
-//                pPlayer.addItem(new ItemStack(new Random().nextFloat() < (OmegaPooConfig.GOLDEN_POOP_CHANCE.get() / 100f) ? ModItems.GOLDEN_POOP.get() : ModItems.POOP.get()));
-//                pPlayer.causeFoodExhaustion(10);
-//                pLevel.playSound(null, pPlayer.getOnPos(), ModSounds.POOP.get(), SoundSource.PLAYERS, 1f, new Random().nextFloat(0.5F, 1.5F));
-//                if (!pPlayer.isCreative()) {
-//                    pPlayer.getItemInHand(pUsedHand).shrink(1);
-//                }
-//                pPlayer.getCooldowns().addCooldown(this, OmegaPooConfig.TOILET_PAPER_COOLDOWN.get());
-//                return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
-//            }
-//        }
-//        return InteractionResultHolder.fail(pPlayer.getItemInHand(pUsedHand));
-//    }
-
-
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
         if (!level.isClientSide) {
             if (player.isCrouching() && (player.isCreative() || player.getFoodData().getFoodLevel() > 0)) {
                 player.addItem(new ItemStack(new Random().nextFloat() < (Config.goldenPoopChance / 100f) ? ModItems.GOLDEN_POOP.get() : ModItems.POOP.get()));
@@ -57,7 +40,7 @@ public class ToiletPaperItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
         tooltipComponents.add(Component.translatable("tooltip.omegapoo.toilet_paper"));
     }
 }

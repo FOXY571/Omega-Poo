@@ -9,8 +9,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -24,16 +24,11 @@ public class PlungerItem extends Item {
     }
 
     @Override
-    public boolean mineBlock(ItemStack stack, Level level, BlockState state, BlockPos pos, LivingEntity entityLiving) {
+    public boolean mineBlock(@NotNull ItemStack stack, Level level, @NotNull BlockState state, @NotNull BlockPos pos, @NotNull LivingEntity entityLiving) {
         if (!level.isClientSide && !state.is(BlockTags.FIRE)) {
             stack.hurtAndBreak(1, entityLiving, EquipmentSlot.MAINHAND);
         }
 
         return state.is(ModBlocks.POOP_BLOCK) || state.is(ModBlocks.POOP_CARPET);
     }
-
-//    @Override
-//    public float getDestroySpeed(ItemStack stack, BlockState state) {
-//        return state.is(ModBlocks.POOP_BLOCK.get()) || state.is(ModBlocks.POOP_CARPET.get()) ? 10.0F : super.getDestroySpeed(stack, state);
-//    }
 }

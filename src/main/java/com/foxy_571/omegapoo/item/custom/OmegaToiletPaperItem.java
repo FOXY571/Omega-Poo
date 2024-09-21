@@ -3,7 +3,6 @@ package com.foxy_571.omegapoo.item.custom;
 import com.foxy_571.omegapoo.OmegaPoo;
 import com.foxy_571.omegapoo.config.Config;
 import com.foxy_571.omegapoo.config.OmegaToiletPaperBlacklist;
-import com.foxy_571.omegapoo.item.ModItems;
 import com.foxy_571.omegapoo.sound.ModSounds;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -17,6 +16,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,28 +28,8 @@ public class OmegaToiletPaperItem extends Item {
         super(properties);
     }
 
-//    @Override
-//    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-//        if (!pLevel.isClientSide) {
-//            if (pPlayer.isCrouching() && (pPlayer.isCreative() || pPlayer.getFoodData().getFoodLevel() > 0)) {
-//                pPlayer.addItem(getRandomItem());
-//                pPlayer.causeFoodExhaustion(10);
-//                pLevel.playSound(null, pPlayer.getOnPos(), ModSounds.POOP.get(), SoundSource.PLAYERS, 1f, new Random().nextFloat(0.5F, 1.5F));
-//                if (!pPlayer.isCreative()) {
-//                    // Damage item
-//                    pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer, (p_43076_) -> {
-//                        p_43076_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-//                    });
-//                }
-//                pPlayer.getCooldowns().addCooldown(this, OmegaPooConfig.OMEGA_TOILET_PAPER_COOLDOWN.get());
-//                return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
-//            }
-//        }
-//        return InteractionResultHolder.fail(pPlayer.getItemInHand(pUsedHand));
-//    }
-
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
         if (!level.isClientSide) {
             if (player.isCrouching() && (player.isCreative() || player.getFoodData().getFoodLevel() > 0)) {
                 player.addItem(getRandomItem());
@@ -66,12 +46,12 @@ public class OmegaToiletPaperItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
         tooltipComponents.add(Component.translatable("tooltip.omegapoo.toilet_paper.tooltip"));
     }
 
     @Override
-    public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
+    public boolean supportsEnchantment(@NotNull ItemStack stack, @NotNull Holder<Enchantment> enchantment) {
         return false;
     }
 

@@ -1,7 +1,6 @@
 package com.foxy_571.omegapoo.config;
 
 import com.foxy_571.omegapoo.OmegaPoo;
-import com.google.gson.stream.JsonReader;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.fml.loading.FMLPaths;
