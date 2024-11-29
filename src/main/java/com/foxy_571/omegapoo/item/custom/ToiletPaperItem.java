@@ -26,9 +26,9 @@ public class ToiletPaperItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
         if (!level.isClientSide) {
             if (player.isCrouching() && (player.isCreative() || player.getFoodData().getFoodLevel() > 0)) {
-                player.addItem(new ItemStack(new Random().nextFloat() < (Config.goldenPoopChance / 100f) ? ModItems.GOLDEN_POOP.get() : ModItems.POOP.get()));
+                player.addItem(new ItemStack(new Random().nextFloat() < (Config.goldenPoopChance / 100F) ? ModItems.GOLDEN_POOP.get() : ModItems.POOP.get()));
                 player.causeFoodExhaustion(10);
-                level.playSound(null, player.getOnPos(), ModSounds.POOP.get(), SoundSource.PLAYERS, 1f, new Random().nextFloat(0.5F, 1.5F));
+                level.playSound(null, player.getOnPos(), ModSounds.POOP.get(), SoundSource.PLAYERS, 1F, new Random().nextFloat(0.5F, 1.5F));
                 if (!player.isCreative()) {
                     player.getItemInHand(usedHand).shrink(1);
                 }

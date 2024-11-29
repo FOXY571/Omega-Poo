@@ -34,7 +34,7 @@ public class OmegaToiletPaperItem extends Item {
             if (player.isCrouching() && (player.isCreative() || player.getFoodData().getFoodLevel() > 0)) {
                 player.addItem(getRandomItem());
                 player.causeFoodExhaustion(10);
-                level.playSound(null, player.getOnPos(), ModSounds.POOP.get(), SoundSource.PLAYERS, 1f, new Random().nextFloat(0.5F, 1.5F));
+                level.playSound(null, player.getOnPos(), ModSounds.POOP.get(), SoundSource.PLAYERS, 1F, new Random().nextFloat(0.5F, 1.5F));
                 if (!player.isCreative()) {
                     player.getItemInHand(usedHand).hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
                 }
