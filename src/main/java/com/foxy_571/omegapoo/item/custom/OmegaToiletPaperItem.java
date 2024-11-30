@@ -47,7 +47,7 @@ public class OmegaToiletPaperItem extends Item {
 
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
-        tooltipComponents.add(Component.translatable("tooltip.omegapoo.toilet_paper.tooltip"));
+        tooltipComponents.add(Component.translatable("tooltip.omegapoo.toilet_paper"));
     }
 
     @Override
