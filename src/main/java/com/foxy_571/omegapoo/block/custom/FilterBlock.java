@@ -5,7 +5,6 @@ import com.foxy_571.omegapoo.block.entity.ModBlockEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
@@ -49,7 +48,7 @@ public class FilterBlock extends BaseEntityBlock {
         } else {
             BlockEntity blockentity = level.getBlockEntity(pos);
             if (blockentity instanceof FilterBlockEntity filterBlockEntity) {
-                player.openMenu(new SimpleMenuProvider(filterBlockEntity, Component.literal("Filter" /** TEMP **/)), pos);
+                player.openMenu(new SimpleMenuProvider(filterBlockEntity, Component.translatable("block.omegapoo.filter")), pos);
             }
             return InteractionResult.CONSUME;
         }
