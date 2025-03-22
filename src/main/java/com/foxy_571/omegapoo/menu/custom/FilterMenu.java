@@ -31,9 +31,9 @@ public class FilterMenu extends AbstractContainerMenu {
         addPlayerInventory(inventory);
         addPlayerHotbar(inventory);
 
-        addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 0, 54, 34));
-        addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 1, 54, 54));
-        addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 2, 104, 34));
+        addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 0, 56, 17));
+        addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 1, 56, 53));
+        addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 2, 116, 35));
 
         addDataSlots(data);
     }
