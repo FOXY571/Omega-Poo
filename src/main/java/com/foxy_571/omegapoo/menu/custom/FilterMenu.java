@@ -32,7 +32,8 @@ public class FilterMenu extends AbstractContainerMenu {
         addPlayerHotbar(inventory);
 
         addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 0, 54, 34));
-        addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 1, 104, 34));
+        addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 1, 54, 54));
+        addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 2, 104, 34));
 
         addDataSlots(data);
     }
@@ -65,7 +66,7 @@ public class FilterMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 2; // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 3; // must be the number of slots you have!
     @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);

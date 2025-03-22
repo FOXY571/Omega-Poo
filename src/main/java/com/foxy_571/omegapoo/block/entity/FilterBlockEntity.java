@@ -25,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class FilterBlockEntity extends BlockEntity implements MenuProvider {
-    public final ItemStackHandler itemHandler = new ItemStackHandler(2) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -36,7 +36,8 @@ public class FilterBlockEntity extends BlockEntity implements MenuProvider {
     };
 
     private static final int INPUT_SLOT = 0;
-    private static final int OUTPUT_SLOT = 1;
+    private static final int WASTE_SLOT = 1;
+    private static final int OUTPUT_SLOT = 2;
 
     protected final ContainerData data;
     private int progress = 0;
@@ -106,9 +107,11 @@ public class FilterBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private void craftItem() {
+        ItemStack waste = new ItemStack(ModItems.GOLDEN_POOP.get());
         ItemStack output = new ItemStack(ModItems.RAW_NUTRIENTS.get());
 
         itemHandler.extractItem(INPUT_SLOT, 1, false);
+        itemHandler.setStackInSlot(WASTE_SLOT, new ItemStack(waste.getItem(), itemHandler.getStackInSlot(WASTE_SLOT).getCount() + waste.getCount()));
         itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(), itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
     }
 
@@ -126,19 +129,31 @@ public class FilterBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private boolean hasRecipe() {
+        ItemStack waste = new ItemStack(ModItems.GOLDEN_POOP.get());
         ItemStack output = new ItemStack(ModItems.RAW_NUTRIENTS.get());
 
-        return itemHandler.getStackInSlot(INPUT_SLOT).is(ModItems.POOP) && canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+        return itemHandler.getStackInSlot(INPUT_SLOT).is(ModItems.POOP) && canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) &&
+                canInsertAmountIntoWasteSlot(waste.getCount()) && canInsertItemIntoWasteSlot(waste);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
-        return itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() ||
-                itemHandler.getStackInSlot(OUTPUT_SLOT).getItem() == output.getItem();
+        return itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() || itemHandler.getStackInSlot(OUTPUT_SLOT).getItem() == output.getItem();
     }
 
     private boolean canInsertAmountIntoOutputSlot(int count) {
         int maxCount = itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() ? 64 : itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
         int currentCount = itemHandler.getStackInSlot(OUTPUT_SLOT).getCount();
+
+        return maxCount >= currentCount + count;
+    }
+
+    private boolean canInsertItemIntoWasteSlot(ItemStack output) {
+        return itemHandler.getStackInSlot(WASTE_SLOT).isEmpty() || itemHandler.getStackInSlot(WASTE_SLOT).getItem() == output.getItem();
+    }
+
+    private boolean canInsertAmountIntoWasteSlot(int count) {
+        int maxCount = itemHandler.getStackInSlot(WASTE_SLOT).isEmpty() ? 64 : itemHandler.getStackInSlot(WASTE_SLOT).getMaxStackSize();
+        int currentCount = itemHandler.getStackInSlot(WASTE_SLOT).getCount();
 
         return maxCount >= currentCount + count;
     }
