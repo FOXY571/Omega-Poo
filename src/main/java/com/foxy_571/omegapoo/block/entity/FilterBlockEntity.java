@@ -126,10 +126,9 @@ public class FilterBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private boolean hasRecipe() {
-        ItemStack output = new ItemStack(ModItems.GOLDEN_POOP.get(), 8);
+        ItemStack output = new ItemStack(ModItems.RAW_NUTRIENTS.get());
 
-        return itemHandler.getStackInSlot(INPUT_SLOT).is(ModItems.POOP) &&
-                canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+        return itemHandler.getStackInSlot(INPUT_SLOT).is(ModItems.POOP) && canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
