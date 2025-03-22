@@ -8,6 +8,7 @@ import com.foxy_571.omegapoo.item.ModCreativeModeTabs;
 import com.foxy_571.omegapoo.item.ModItems;
 import com.foxy_571.omegapoo.menu.ModMenus;
 import com.foxy_571.omegapoo.menu.custom.FilterScreen;
+import com.foxy_571.omegapoo.recipe.ModRecipes;
 import com.foxy_571.omegapoo.sound.ModSounds;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -34,6 +35,7 @@ public class OmegaPoo {
         ModBlockEntities.register(modEventBus);
         ModMenus.register(modEventBus);
         ModSounds.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC, "omegapoo/omegapoo.toml");
         OmegaToiletPaperBlacklist.write();

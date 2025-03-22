@@ -1,7 +1,8 @@
 package com.foxy_571.omegapoo.block.entity;
 
-import com.foxy_571.omegapoo.item.ModItems;
 import com.foxy_571.omegapoo.menu.custom.FilterMenu;
+import com.foxy_571.omegapoo.recipe.FilterRecipe;
+import com.foxy_571.omegapoo.recipe.ModRecipes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -17,12 +18,16 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class FilterBlockEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
@@ -107,11 +112,10 @@ public class FilterBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private void craftItem() {
-        ItemStack waste = new ItemStack(ModItems.GOLDEN_POOP.get());
-        ItemStack output = new ItemStack(ModItems.RAW_NUTRIENTS.get());
+        Optional<RecipeHolder<FilterRecipe>> recipe = getCurrentRecipe();
 
+        ItemStack output = recipe.get().value().output();
         itemHandler.extractItem(INPUT_SLOT, 1, false);
-        itemHandler.setStackInSlot(WASTE_SLOT, new ItemStack(waste.getItem(), itemHandler.getStackInSlot(WASTE_SLOT).getCount() + waste.getCount()));
         itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(), itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
     }
 
@@ -129,11 +133,17 @@ public class FilterBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private boolean hasRecipe() {
-        ItemStack waste = new ItemStack(ModItems.GOLDEN_POOP.get());
-        ItemStack output = new ItemStack(ModItems.RAW_NUTRIENTS.get());
+        Optional<RecipeHolder<FilterRecipe>> recipe = getCurrentRecipe();
+        if (recipe.isEmpty()) {
+            return false;
+        }
 
-        return itemHandler.getStackInSlot(INPUT_SLOT).is(ModItems.POOP) && canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) &&
-                canInsertAmountIntoWasteSlot(waste.getCount()) && canInsertItemIntoWasteSlot(waste);
+        ItemStack output = recipe.get().value().output();
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) /* && canInsertAmountIntoWasteSlot(waste.getCount()) && canInsertItemIntoWasteSlot(waste)*/;
+    }
+
+    private Optional<RecipeHolder<FilterRecipe>> getCurrentRecipe() {
+        return level.getRecipeManager().getRecipeFor(ModRecipes.FILTER_RECIPE_TYPE.get(), new SingleRecipeInput(itemHandler.getStackInSlot(INPUT_SLOT)), level);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {

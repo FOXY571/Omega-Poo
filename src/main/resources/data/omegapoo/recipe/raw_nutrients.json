@@ -1,0 +1,9 @@
+{
+  "type": "omegapoo:filter",
+  "ingredient": {
+    "item": "omegapoo:poop"
+  },
+  "result": {
+    "id": "omegapoo:raw_nutrients"
+  }
+}
