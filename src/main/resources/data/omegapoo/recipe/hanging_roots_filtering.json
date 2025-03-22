@@ -1,0 +1,12 @@
+{
+  "type": "omegapoo:filtering",
+  "ingredient": {
+    "item": "minecraft:rooted_dirt"
+  },
+  "result": {
+    "id": "minecraft:hanging_roots"
+  },
+  "waste": {
+    "id": "minecraft:dirt"
+  }
+}

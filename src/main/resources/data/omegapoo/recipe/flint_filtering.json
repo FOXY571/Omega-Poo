@@ -1,5 +1,5 @@
 {
-  "type": "omegapoo:filter",
+  "type": "omegapoo:filtering",
   "ingredient": {
     "item": "minecraft:gravel"
   },

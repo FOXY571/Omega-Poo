@@ -1,0 +1,12 @@
+{
+  "type": "omegapoo:filtering",
+  "ingredient": {
+    "item": "minecraft:coarse_dirt"
+  },
+  "result": {
+    "id": "minecraft:gravel"
+  },
+  "waste": {
+    "id": "minecraft:dirt"
+  }
+}

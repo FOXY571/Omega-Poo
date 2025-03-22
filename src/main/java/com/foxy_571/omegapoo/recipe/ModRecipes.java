@@ -12,11 +12,11 @@ public class ModRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(Registries.RECIPE_SERIALIZER, OmegaPoo.MOD_ID);
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(Registries.RECIPE_TYPE, OmegaPoo.MOD_ID);
 
-    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<FilterRecipe>> FILTER_SERIALIZER = SERIALIZERS.register("filter", FilterRecipe.Serializer::new);
-    public static final DeferredHolder<RecipeType<?>, RecipeType<FilterRecipe>> FILTER_RECIPE_TYPE = RECIPE_TYPES.register("filter", () -> new RecipeType<>() {
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<FilterRecipe>> FILTER_SERIALIZER = SERIALIZERS.register("filtering", FilterRecipe.Serializer::new);
+    public static final DeferredHolder<RecipeType<?>, RecipeType<FilterRecipe>> FILTER_RECIPE_TYPE = RECIPE_TYPES.register("filtering", () -> new RecipeType<>() {
         @Override
         public String toString() {
-            return "filter";
+            return "filtering";
         }
     });
 
