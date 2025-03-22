@@ -115,8 +115,11 @@ public class FilterBlockEntity extends BlockEntity implements MenuProvider {
         Optional<RecipeHolder<FilterRecipe>> recipe = getCurrentRecipe();
 
         ItemStack output = recipe.get().value().output();
+        ItemStack waste = recipe.get().value().waste();
+
         itemHandler.extractItem(INPUT_SLOT, 1, false);
         itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(), itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
+        itemHandler.setStackInSlot(WASTE_SLOT, new ItemStack(waste.getItem(), itemHandler.getStackInSlot(WASTE_SLOT).getCount() + waste.getCount()));
     }
 
     private void resetProgress() {
@@ -139,7 +142,9 @@ public class FilterBlockEntity extends BlockEntity implements MenuProvider {
         }
 
         ItemStack output = recipe.get().value().output();
-        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) /* && canInsertAmountIntoWasteSlot(waste.getCount()) && canInsertItemIntoWasteSlot(waste)*/;
+        ItemStack waste = recipe.get().value().waste();
+
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) && canInsertAmountIntoWasteSlot(waste.getCount()) && canInsertItemIntoWasteSlot(waste);
     }
 
     private Optional<RecipeHolder<FilterRecipe>> getCurrentRecipe() {

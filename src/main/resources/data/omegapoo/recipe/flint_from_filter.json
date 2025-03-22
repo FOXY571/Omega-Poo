@@ -6,5 +6,8 @@
   "result": {
     "id": "minecraft:flint",
     "count": 2
+  },
+  "waste": {
+    "id": "minecraft:sand"
   }
 }

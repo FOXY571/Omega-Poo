@@ -11,7 +11,7 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public record FilterRecipe(Ingredient inputItem, ItemStack output) implements Recipe<SingleRecipeInput> {
+public record FilterRecipe(Ingredient inputItem, ItemStack output, ItemStack waste) implements Recipe<SingleRecipeInput> {
     @Override
     public @NotNull NonNullList<Ingredient> getIngredients() {
         NonNullList<Ingredient> ingredients = NonNullList.create();
@@ -55,12 +55,14 @@ public record FilterRecipe(Ingredient inputItem, ItemStack output) implements Re
     public static class Serializer implements RecipeSerializer<FilterRecipe> {
         public static final MapCodec<FilterRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
                 Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(FilterRecipe::inputItem),
-                ItemStack.CODEC.fieldOf("result").forGetter(FilterRecipe::output)
+                ItemStack.CODEC.fieldOf("result").forGetter(FilterRecipe::output),
+                ItemStack.CODEC.fieldOf("waste").forGetter(FilterRecipe::waste)
         ).apply(inst, FilterRecipe::new));
 
         public static final StreamCodec<RegistryFriendlyByteBuf, FilterRecipe> STREAM_CODEC = StreamCodec.composite(
                 Ingredient.CONTENTS_STREAM_CODEC, FilterRecipe::inputItem,
                 ItemStack.STREAM_CODEC, FilterRecipe::output,
+                ItemStack.STREAM_CODEC, FilterRecipe::waste,
                 FilterRecipe::new
         );
 
