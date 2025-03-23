@@ -20,11 +20,12 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.POOP);
                 output.accept(ModItems.GOLDEN_POOP);
                 output.accept(ModItems.OMEGA_POOP);
+                output.accept(ModItems.POOP_ESSENCE);
+                output.accept(ModItems.RAW_NUTRIENTS);
                 output.accept(ModItems.TOILET_PAPER);
                 output.accept(ModItems.OMEGA_TOILET_PAPER);
                 output.accept(ModItems.PLUNGER);
                 output.accept(ModItems.BOWL_OF_POOP);
-                output.accept(ModItems.RAW_NUTRIENTS);
 
                 output.accept(ModBlocks.POOP_BLOCK);
                 output.accept(ModBlocks.POOP_CARPET);

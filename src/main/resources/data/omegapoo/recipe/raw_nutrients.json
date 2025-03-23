@@ -1,12 +1,14 @@
 {
-  "type": "omegapoo:filter",
+  "type": "omegapoo:filtering",
   "ingredient": {
     "item": "omegapoo:poop"
   },
   "result": {
-    "id": "omegapoo:raw_nutrients"
+    "id": "omegapoo:raw_nutrients",
+    "count": 2
   },
   "waste": {
-    "id": "minecraft:dirt"
+    "id": "omegapoo:poop_essence",
+    "count": 4
   }
 }

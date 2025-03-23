@@ -17,11 +17,12 @@ public class ModItems {
     public static final DeferredItem<Item> POOP = ITEMS.register("poop", () -> new Item(new Item.Properties().food(ModFoodProperties.POOP)));
     public static final DeferredItem<Item> GOLDEN_POOP = ITEMS.register("golden_poop", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> OMEGA_POOP = ITEMS.register("omega_poop", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)));
+    public static final DeferredItem<Item> POOP_ESSENCE = ITEMS.register("poop_essence", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_NUTRIENTS = ITEMS.register("raw_nutrients", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> TOILET_PAPER = ITEMS.register("toilet_paper", () -> new ToiletPaperItem(new Item.Properties()));
     public static final DeferredItem<Item> OMEGA_TOILET_PAPER = ITEMS.register("omega_toilet_paper", () -> new OmegaToiletPaperItem(new Item.Properties().durability(100).rarity(Rarity.UNCOMMON).component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)));
     public static final DeferredItem<Item> PLUNGER = ITEMS.register("plunger", () -> new PlungerItem(new Item.Properties().durability(238).component(DataComponents.TOOL, PlungerItem.createToolProperties())));
     public static final DeferredItem<Item> BOWL_OF_POOP = ITEMS.register("bowl_of_poop", () -> new Item(new Item.Properties().stacksTo(1).food(ModFoodProperties.BOWL_OF_POOP)));
-    public static final DeferredItem<Item> RAW_NUTRIENTS = ITEMS.register("raw_nutrients", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
