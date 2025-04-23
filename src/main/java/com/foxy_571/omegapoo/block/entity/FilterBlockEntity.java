@@ -173,7 +173,6 @@ public class FilterBlockEntity extends BlockEntity implements MenuProvider {
         return maxCount >= currentCount + count;
     }
 
-
     @Override
     public @NotNull Component getDisplayName() {
         return Component.translatable("block.omegapoo.filter");
