@@ -3,19 +3,13 @@ package com.foxy_571.omegapoo.item.custom;
 import com.foxy_571.omegapoo.OmegaPoo;
 import com.foxy_571.omegapoo.config.Config;
 import com.foxy_571.omegapoo.config.OmegaToiletPaperBlacklist;
-import com.foxy_571.omegapoo.sound.ModSounds;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -23,31 +17,24 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-public class OmegaToiletPaperItem extends Item {
+public class OmegaToiletPaperItem extends AbstractToiletPaperItem {
     public OmegaToiletPaperItem(Properties properties) {
         super(properties);
     }
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
-        if (!level.isClientSide) {
-            if (player.isCrouching() && (player.isCreative() || player.getFoodData().getFoodLevel() > 0)) {
-                player.addItem(getRandomItem());
-                player.causeFoodExhaustion(10);
-                level.playSound(null, player.getOnPos(), ModSounds.POOP.get(), SoundSource.PLAYERS, 1F, new Random().nextFloat(0.5F, 1.5F));
-                if (!player.isCreative()) {
-                    player.getItemInHand(usedHand).hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
-                }
-                player.getCooldowns().addCooldown(this, Config.omegaToiletPaperCooldown);
-                return InteractionResultHolder.success(player.getItemInHand(usedHand));
-            }
-        }
-        return InteractionResultHolder.fail(player.getItemInHand(usedHand));
+    protected ItemStack getPoopedItem() {
+        return getRandomItem();
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
-        tooltipComponents.add(Component.translatable("tooltip.omegapoo.toilet_paper"));
+    protected int getCooldown() {
+        return Config.omegaToiletPaperCooldown;
+    }
+
+    @Override
+    protected void affectItemStack(ItemStack itemStack, Player player) {
+        itemStack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
     }
 
     @Override
