@@ -2,7 +2,7 @@
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
     "bottom": "omegapoo:block/filter_bottom",
-    "side": "omegapoo:block/filter_side",
+    "side": "omegapoo:block/filter_side_on",
     "top": "omegapoo:block/filter_top"
   }
 }

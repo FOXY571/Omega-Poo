@@ -11,11 +11,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -23,8 +26,11 @@ import org.jetbrains.annotations.Nullable;
 public class FilterBlock extends BaseEntityBlock {
     public static final MapCodec<FilterBlock> CODEC = simpleCodec(FilterBlock::new);
 
+    public static final BooleanProperty ON = BooleanProperty.create("on");
+
     public FilterBlock(Properties properties) {
         super(properties);
+        registerDefaultState(stateDefinition.any().setValue(ON, false));
     }
 
     @Override
@@ -75,6 +81,10 @@ public class FilterBlock extends BaseEntityBlock {
         }
 
         super.onRemove(state, level, pos, newState, movedByPiston);
+    }
+
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(ON);
     }
 
     @Override

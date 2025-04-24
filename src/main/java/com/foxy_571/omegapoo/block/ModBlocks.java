@@ -26,7 +26,7 @@ public class ModBlocks {
     public static final DeferredBlock<StairBlock> HARDENED_POOP_BRICK_STAIRS = registerBlock("hardened_poop_brick_stairs", () -> new StairBlock(ModBlocks.HARDENED_POOP_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS)));
     public static final DeferredBlock<SlabBlock> HARDENED_POOP_BRICK_SLAB = registerBlock("hardened_poop_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB)));
     public static final DeferredBlock<WallBlock> HARDENED_POOP_BRICK_WALL = registerBlock("hardened_poop_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL)));
-    public static final DeferredBlock<FilterBlock> FILTER = registerBlock("filter", () -> new FilterBlock(BlockBehaviour.Properties.of()));
+    public static final DeferredBlock<FilterBlock> FILTER = registerBlock("filter", () -> new FilterBlock(BlockBehaviour.Properties.of().strength(2.5F).sound(SoundType.WOOD).ignitedByLava()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

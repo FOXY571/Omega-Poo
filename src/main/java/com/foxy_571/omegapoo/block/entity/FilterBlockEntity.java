@@ -1,5 +1,6 @@
 package com.foxy_571.omegapoo.block.entity;
 
+import com.foxy_571.omegapoo.block.custom.FilterBlock;
 import com.foxy_571.omegapoo.menu.custom.FilterMenu;
 import com.foxy_571.omegapoo.recipe.FilterRecipe;
 import com.foxy_571.omegapoo.recipe.ModRecipes;
@@ -99,7 +100,9 @@ public class FilterBlockEntity extends BlockEntity implements MenuProvider, Cont
     }
 
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
-        if (hasRecipe()) {
+        boolean hasRecipe = hasRecipe();
+
+        if (hasRecipe) {
             increaseCraftingProgress();
             setChanged(level, blockPos, blockState);
 
@@ -110,6 +113,9 @@ public class FilterBlockEntity extends BlockEntity implements MenuProvider, Cont
         } else {
             resetProgress();
         }
+
+        BlockState newBlockState = blockState.setValue(FilterBlock.ON, hasRecipe);
+        level.setBlock(blockPos, newBlockState, 3);
     }
 
     private void craftItem() {

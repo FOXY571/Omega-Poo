@@ -1,0 +1,33 @@
+{
+  "parent": "omegapoo:omegapoo/obtain_filter",
+  "criteria": {
+    "raw_nutrients": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:raw_nutrients"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.omegapoo.obtain_raw_nutrients.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "omegapoo:raw_nutrients"
+    },
+    "title": {
+      "translate": "advancements.omegapoo.obtain_raw_nutrients.title"
+    }
+  },
+  "requirements": [
+    [
+      "raw_nutrients"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

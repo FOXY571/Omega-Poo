@@ -1,0 +1,33 @@
+{
+  "parent": "omegapoo:omegapoo/root",
+  "criteria": {
+    "filter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:filter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.omegapoo.obtain_filter.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "omegapoo:filter"
+    },
+    "title": {
+      "translate": "advancements.omegapoo.obtain_filter.title"
+    }
+  },
+  "requirements": [
+    [
+      "filter"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

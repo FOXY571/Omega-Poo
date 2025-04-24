@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "X": {
+      "tag": "c:ingots/iron"
+    },
+    "H": {
+      "item": "minecraft:hopper"
+    },
+    "S": {
+      "tag": "c:sands"
+    },
+    "C": {
+      "item": "minecraft:charcoal"
+    }
+  },
+  "pattern": [
+    "#H#",
+    "XSX",
+    "#C#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "omegapoo:filter"
+  }
+}

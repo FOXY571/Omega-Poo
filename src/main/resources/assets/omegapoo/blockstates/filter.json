@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "on=false": {
       "model": "omegapoo:block/filter"
+    },
+    "on=true": {
+      "model": "omegapoo:block/filter_on"
     }
   }
 }
