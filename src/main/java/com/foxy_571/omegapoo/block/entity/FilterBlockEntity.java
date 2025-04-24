@@ -10,6 +10,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -29,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class FilterBlockEntity extends BlockEntity implements MenuProvider {
+public class FilterBlockEntity extends BlockEntity implements MenuProvider, Container {
     public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -181,6 +182,72 @@ public class FilterBlockEntity extends BlockEntity implements MenuProvider {
     @Override
     public @Nullable AbstractContainerMenu createMenu(int i, @NotNull Inventory inventory, @NotNull Player player) {
         return new FilterMenu(i, inventory, this, data);
+    }
+
+    @Override
+    public int getContainerSize() {
+        return itemHandler.getSlots();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        boolean isEmpty = true;
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            if (!itemHandler.getStackInSlot(i).isEmpty()) {
+                isEmpty = false;
+            }
+        }
+        return isEmpty;
+    }
+
+    @Override
+    public @NotNull ItemStack getItem(int slot) {
+        return itemHandler.getStackInSlot(slot);
+    }
+
+    @Override
+    public @NotNull ItemStack removeItem(int slot, int amount) {
+        if (slot >= 0 && slot < itemHandler.getSlots() && !itemHandler.getStackInSlot(slot).isEmpty() && amount > 0) {
+            return itemHandler.getStackInSlot(slot).split(amount);
+        }
+        return ItemStack.EMPTY;
+    }
+
+    @Override
+    public @NotNull ItemStack removeItemNoUpdate(int slot) {
+        if (slot >= 0 && slot < itemHandler.getSlots()) {
+            ItemStack itemStack = itemHandler.getStackInSlot(slot);
+            itemHandler.setStackInSlot(slot, ItemStack.EMPTY);
+            return itemStack;
+        }
+        return ItemStack.EMPTY;
+    }
+
+    @Override
+    public void setItem(int slot, @NotNull ItemStack itemStack) {
+        itemHandler.setStackInSlot(slot, itemStack);
+    }
+
+    @Override
+    public boolean stillValid(@NotNull Player player) {
+        return Container.stillValidBlockEntity(this, player);
+    }
+
+    @Override
+    public void clearContent() {
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            itemHandler.setStackInSlot(i, ItemStack.EMPTY);
+        }
+    }
+
+    @Override
+    public boolean canPlaceItem(int slot, @NotNull ItemStack stack) {
+        return slot == INPUT_SLOT;
+    }
+
+    @Override
+    public boolean canTakeItem(@NotNull Container target, int slot, @NotNull ItemStack stack) {
+        return slot != INPUT_SLOT;
     }
 
     public void drops() {

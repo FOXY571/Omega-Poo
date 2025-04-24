@@ -5,7 +5,6 @@ import com.foxy_571.omegapoo.item.ModItems;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
-import java.util.List;
 import java.util.Random;
 
 public class ToiletPaperItem extends AbstractToiletPaperItem {
