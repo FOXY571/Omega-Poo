@@ -22,6 +22,8 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.OMEGA_POOP);
                 output.accept(ModItems.POOP_ESSENCE);
                 output.accept(ModItems.RAW_NUTRIENTS);
+                output.accept(ModItems.POOP_IRON_INGOT);
+                output.accept(ModItems.POOP_IRON_NUGGET);
                 output.accept(ModItems.TOILET_PAPER);
                 output.accept(ModItems.OMEGA_TOILET_PAPER);
                 output.accept(ModItems.PLUNGER);
@@ -37,6 +39,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModBlocks.HARDENED_POOP_BRICK_STAIRS);
                 output.accept(ModBlocks.HARDENED_POOP_BRICK_SLAB);
                 output.accept(ModBlocks.HARDENED_POOP_BRICK_WALL);
+                output.accept(ModBlocks.POOP_IRON_BLOCK);
                 output.accept(ModBlocks.FILTER);
             }).build());
 

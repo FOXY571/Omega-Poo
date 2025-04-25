@@ -4,6 +4,8 @@
   "item.omegapoo.omega_poop": "Omega Poop",
   "item.omegapoo.poop_essence": "Poop Essence",
   "item.omegapoo.raw_nutrients": "Raw Nutrients",
+  "item.omegapoo.poop_iron_ingot": "Poop Iron Ingot",
+  "item.omegapoo.poop_iron_nugget": "Poop Iron Nugget",
   "item.omegapoo.toilet_paper": "Toilet Paper",
   "item.omegapoo.omega_toilet_paper": "Omega Toilet Paper",
   "item.omegapoo.plunger": "Plunger",
@@ -21,6 +23,7 @@
   "block.omegapoo.hardened_poop_brick_stairs": "Hardened Poop Brick Stairs",
   "block.omegapoo.hardened_poop_brick_slab": "Hardened Poop Brick Slab",
   "block.omegapoo.hardened_poop_brick_wall": "Hardened Poop Brick Wall",
+  "block.omegapoo.poop_iron_block": "Poop Iron Block",
   "block.omegapoo.filter": "Filter",
 
   "creativetab.omegapoo.omegapoo_tab": "Omega Poo",
