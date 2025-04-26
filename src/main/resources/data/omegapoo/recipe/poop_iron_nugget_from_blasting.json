@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "omegapoo:poop_iron_pickaxe"
+    },
+    {
+      "item": "omegapoo:poop_iron_shovel"
+    },
+    {
+      "item": "omegapoo:poop_iron_axe"
+    },
+    {
+      "item": "omegapoo:poop_iron_hoe"
+    },
+    {
+      "item": "omegapoo:poop_iron_sword"
+    }
+  ],
+  "result": {
+    "id": "omegapoo:poop_iron_nugget"
+  }
+}

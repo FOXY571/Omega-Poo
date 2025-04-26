@@ -26,6 +26,11 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.POOP_IRON_NUGGET);
                 output.accept(ModItems.TOILET_PAPER);
                 output.accept(ModItems.OMEGA_TOILET_PAPER);
+                output.accept(ModItems.POOP_IRON_SWORD);
+                output.accept(ModItems.POOP_IRON_SHOVEL);
+                output.accept(ModItems.POOP_IRON_PICKAXE);
+                output.accept(ModItems.POOP_IRON_AXE);
+                output.accept(ModItems.POOP_IRON_HOE);
                 output.accept(ModItems.PLUNGER);
                 output.accept(ModItems.BOWL_OF_POOP);
 

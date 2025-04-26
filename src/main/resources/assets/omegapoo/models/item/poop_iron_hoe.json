@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "omegapoo:item/poop_iron_hoe"
+  }
+}
