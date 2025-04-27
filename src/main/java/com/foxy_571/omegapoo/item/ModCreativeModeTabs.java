@@ -32,6 +32,10 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.POOP_IRON_AXE);
                 output.accept(ModItems.POOP_IRON_HOE);
                 output.accept(ModItems.PLUNGER);
+                output.accept(ModItems.POOP_IRON_HELMET);
+                output.accept(ModItems.POOP_IRON_CHESTPLATE);
+                output.accept(ModItems.POOP_IRON_LEGGINGS);
+                output.accept(ModItems.POOP_IRON_BOOTS);
                 output.accept(ModItems.BOWL_OF_POOP);
 
                 output.accept(ModBlocks.POOP_BLOCK);
