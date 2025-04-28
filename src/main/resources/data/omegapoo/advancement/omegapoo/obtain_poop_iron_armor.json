@@ -1,0 +1,66 @@
+{
+  "parent": "omegapoo:omegapoo/obtain_filter",
+  "criteria": {
+    "poop_iron_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:poop_iron_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "poop_iron_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:poop_iron_chestplate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "poop_iron_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:poop_iron_helmet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "poop_iron_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "omegapoo:poop_iron_leggings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.omegapoo.obtain_poop_iron_armor.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "omegapoo:poop_iron_chestplate"
+    },
+    "title": {
+      "translate": "advancements.omegapoo.obtain_poop_iron_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "poop_iron_helmet",
+      "poop_iron_chestplate",
+      "poop_iron_leggings",
+      "poop_iron_boots"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
