@@ -1,14 +1,13 @@
 {
-  "type": "omegapoo:filtering",
-  "ingredient": {
-    "item": "omegapoo:poop"
-  },
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "omegapoo:raw_nutrient_block"
+    }
+  ],
   "result": {
-    "id": "omegapoo:raw_nutrients",
-    "count": 2
-  },
-  "waste": {
-    "id": "omegapoo:poop_essence",
-    "count": 4
+    "count": 9,
+    "id": "omegapoo:raw_nutrients"
   }
 }

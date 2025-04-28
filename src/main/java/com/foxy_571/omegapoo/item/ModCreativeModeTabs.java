@@ -48,6 +48,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModBlocks.HARDENED_POOP_BRICK_STAIRS);
                 output.accept(ModBlocks.HARDENED_POOP_BRICK_SLAB);
                 output.accept(ModBlocks.HARDENED_POOP_BRICK_WALL);
+                output.accept(ModBlocks.RAW_NUTRIENT_BLOCK);
                 output.accept(ModBlocks.POOP_IRON_BLOCK);
                 output.accept(ModBlocks.FILTER);
             }).build());

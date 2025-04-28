@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "omegapoo:block/raw_nutrient_block"
+    }
+  }
+}

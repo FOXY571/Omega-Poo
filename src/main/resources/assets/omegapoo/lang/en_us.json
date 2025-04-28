@@ -22,7 +22,7 @@
 
   "tooltip.omegapoo.toilet_paper": "\u00a77Must be crouching in order to use",
 
-  "block.omegapoo.poop_block": "Poop Block",
+  "block.omegapoo.poop_block": "Block of Poop",
   "block.omegapoo.poop_carpet": "Poop Carpet",
   "block.omegapoo.hardened_poop": "Hardened Poop",
   "block.omegapoo.hardened_poop_stairs": "Hardened Poop Stairs",
@@ -32,7 +32,8 @@
   "block.omegapoo.hardened_poop_brick_stairs": "Hardened Poop Brick Stairs",
   "block.omegapoo.hardened_poop_brick_slab": "Hardened Poop Brick Slab",
   "block.omegapoo.hardened_poop_brick_wall": "Hardened Poop Brick Wall",
-  "block.omegapoo.poop_iron_block": "Poop Iron Block",
+  "block.omegapoo.raw_nutrient_block": "Block of Raw Nutrients",
+  "block.omegapoo.poop_iron_block": "Block of Poop Iron",
   "block.omegapoo.filter": "Filter",
 
   "creativetab.omegapoo.omegapoo_tab": "Omega Poo",
