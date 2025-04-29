@@ -16,4 +16,6 @@ public class ModFoodProperties {
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 150, 2), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 150), 1.0F)
             .usingConvertsTo(Items.BOWL).build();
+
+    public static final FoodProperties NUTRIENT_BAR = new FoodProperties.Builder().nutrition(6).saturationModifier(1.2F).build();
 }

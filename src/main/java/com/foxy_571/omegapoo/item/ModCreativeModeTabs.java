@@ -37,6 +37,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.POOP_IRON_LEGGINGS);
                 output.accept(ModItems.POOP_IRON_BOOTS);
                 output.accept(ModItems.BOWL_OF_POOP);
+                output.accept(ModItems.NUTRIENT_BAR);
 
                 output.accept(ModBlocks.POOP_BLOCK);
                 output.accept(ModBlocks.POOP_CARPET);

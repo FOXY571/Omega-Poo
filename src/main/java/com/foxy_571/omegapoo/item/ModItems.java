@@ -33,6 +33,7 @@ public class ModItems {
     public static final DeferredItem<ArmorItem> POOP_IRON_LEGGINGS = ITEMS.register("poop_iron_leggings", () -> new ArmorItem(ModArmorMaterials.POOP_IRON_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(23))));
     public static final DeferredItem<ArmorItem> POOP_IRON_BOOTS = ITEMS.register("poop_iron_boots", () -> new ArmorItem(ModArmorMaterials.POOP_IRON_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(23))));
     public static final DeferredItem<Item> BOWL_OF_POOP = ITEMS.register("bowl_of_poop", () -> new Item(new Item.Properties().stacksTo(1).food(ModFoodProperties.BOWL_OF_POOP)));
+    public static final DeferredItem<Item> NUTRIENT_BAR = ITEMS.register("nutrient_bar", () -> new Item(new Item.Properties().food(ModFoodProperties.NUTRIENT_BAR)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
